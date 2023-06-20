@@ -1,0 +1,349 @@
+/* ///////////////////////// general styles ///////////////////////// */
+*{
+    --info-color: rgb(13, 202, 240);
+    --dark-color: rgb(33, 37, 41);
+    --first-color: rgb(0, 188, 212);
+    --second-color: rgb(0, 151, 167);
+}
+
+@font-face{
+    font-family: Tanha;
+    src: url("../fonts/Tanha.ttf");
+}
+@font-face{
+    font-family: Vazir;
+    src: url("../fonts/Vazir.ttf");
+}
+@font-face{
+    font-family: Shabnam;
+    src: url("../fonts/Shabnam.ttf");
+}
+
+h1{
+    font-family: Vazir, sans-serif;
+    width: max-content;
+}
+
+h2, h4, div{
+    font-family: Shabnam, sans-serif;
+}
+
+h5, span{
+    font-family: Vazir, sans-serif;
+}
+
+pre{
+    font-family: Tanha, sans-serif !important;
+    text-align: justify;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+textarea{
+    min-height: 150px!important;
+}
+
+/* ///////////////////////// styles of header ///////////////////////// */
+#headerSection>div:first-of-type{
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.96;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+#navbar{
+    transition: background-color 0.3s ease-out;
+}
+
+.navbar-toggler{
+    border: 0 !important;
+}
+
+.navbar-toggler-icon:checked{
+    border: 0 !important;
+}
+
+.circle{
+    width: 26px;
+    height: 26px;
+    transform: translateY(-16px);
+}
+
+/* ///////////////////////// bio in header ///////////////////////// */
+#bio div{
+    height: 50px;
+}
+
+#bio>img{
+    width: 300px;
+    height: 300px;
+    border: 4px solid white;
+    animation: outlineAnimation2 1.5s ease-out 1.5s infinite;
+}
+
+#bio div h2{
+    display: none;
+    max-width: max-content;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#bio div h2 img{
+    background-color: indianred;
+    width: 32px;
+}
+
+img[alt=personal-picture]{
+    box-shadow: 0 0 25px 3px rgba(69, 69, 69, 0.39);;
+}
+
+/* ///////////////////////// menu offcanvas ///////////////////////// */
+#offcanvasMenu{
+    background: linear-gradient(to bottom, var(--first-color), var(--second-color));
+}
+
+#offcanvasMenu .nav-item:hover{
+    background-color: rgb(0, 151, 167);
+}
+
+#offcanvasMenu .nav-item:active{
+    background-color: rgb(0, 96, 100);
+}
+
+/* ///////////////////////// media queries ///////////////////////// */
+/* queries of profile of navbar */
+.navbar-brand img{
+    max-width: 3vw;
+    max-height: 3vw;
+}
+
+#offcanvasMenu{
+    width: 25%;
+}
+
+@media only screen and (max-width: 1200px){
+    .navbar-brand img{
+        max-width: 5vw;
+        max-height: 5vw;
+    }
+    #offcanvasMenu{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .navbar-brand img{
+        max-width: 6vw;
+        max-height: 6vw;
+    }
+    #offcanvasMenu{
+        width: 35%;
+    }
+    .list-group-item{
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    .navbar-brand img{
+        max-width: 8vw;
+        max-height: 8vw;
+    }
+    #offcanvasMenu{
+        width: 40%;
+    }
+    .ability-progress-bar{
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .navbar-brand img{
+        max-width: 11vw;
+        max-height: 11vw;
+    }
+    #offcanvasMenu{
+        width: 55%;
+    }
+    .list-group-item{
+        width: 100%;
+    }
+}
+
+/* ///////////////////////// my abilities section ///////////////////////// */
+.ability-progress-bar{
+    width: 150px;
+    height: 150px;
+    transition: 0.6s ease-in-out;
+    box-shadow: 0 0 40px 3px rgba(69, 69, 69, 0.39) !important;
+}
+
+.ability-progress-bar span:first-of-type{
+    margin-top: 35%;
+}
+
+.ability-progress-bar:hover{
+    transform: scale(1.2, 1.2);
+}
+
+/* ///////////////////////// my projects section ///////////////////////// */
+.list-group-item {
+    width: 50% !important;
+    background-color: lightblue !important;
+    border: 1px solid var(--info-color) !important;
+    cursor: pointer;
+}
+
+.list-group-item:hover, .list-group-item:hover span{
+    background-color: var(--dark-color) !important;
+    color: var(--info-color) !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .list-group-item{
+        width: 75% !important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .list-group-item{
+        width: 100% !important;
+    }
+}
+
+/* ///////////////////////// learn section ///////////////////////// */
+.learnSubject{
+    transition: 0.6s ease-in-out;
+}
+
+.learnSubject img{
+    border: 3px dashed var(--info-color);
+    height: 130px;
+    width: 130px;
+    box-shadow: 0 0 25px 3px rgba(69, 69, 69, 0.39);
+}
+
+.nowLearn img{
+    border: 2px solid var(--info-color);
+    animation: outlineAnimation 1.3s ease-out 1s infinite;
+}
+
+.learnSubject span:nth-of-type(1){
+    transform: translateX(25px);
+}
+
+.learnSubject:hover{
+    transform: scale(1.2, 1.2);
+}
+
+.line-between{
+    width: 120px !important;
+    height: 2px;
+    margin-top: 90px !important;
+    border: 2px dashed var(--info-color);
+}
+
+.line-side{
+    justify-content: flex-end;
+}
+
+.line-side hr{
+    width: 2px !important;
+    height: 120px;
+    padding: 0 !important;
+    border: 2px dashed var(--info-color);
+}
+
+.line-between:nth-of-type(4){
+    display: none;
+}
+
+/* media queries */
+@media only screen and (max-width: 1400px){
+    .learnSubject img{
+        width: 120px !important;
+        height: 120px !important;
+    }
+    .line-between{
+        width: 100px !important;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .learnSubject img{
+        width: 110px;
+        height: 110px;
+    }
+    .line-between{
+        width: 90px !important;
+    }
+}
+@media only screen and (max-width: 990px){
+    .learnSubject img{
+        width: 100px;
+        height: 100px;
+    }
+    .line-between{
+        width: 80px !important;
+    }
+}
+@media only screen and (max-width: 768px){
+    .line-between{
+        display: block !important;
+        transform: rotate(90deg);
+        margin-top: 15px !important;
+        margin-bottom: 35px !important;
+    }
+    .line-side{
+        display: none !important;
+    }
+    .learnSubject:nth-of-type(6){
+        order: 5 !important;
+    }
+    .learnSubject:nth-of-type(8){
+        order: 1 !important;
+    }
+    .learnSubject span:nth-of-type(1){
+        transform: translateX(80px);
+    }
+}
+
+/* ///////////////////////// contact section ///////////////////////// */
+button[type=submit]{
+    background-color: var(--info-color);
+}
+
+button[type=submit]:hover{
+    background-color: var(--first-color);
+}
+
+button[type=submit]:active{
+    background-color: var(--second-color) !important;
+}
+
+/* ///////////////////////// footer section ///////////////////////// */
+footer div:first-of-type{
+    background-color: var(--first-color);
+}
+
+
+/* ///////////////////////// animation ///////////////////////// */
+@keyframes outlineAnimation {
+    from {outline: 2px solid var(--second-color)}
+    to {outline: 13px solid rgb(0, 188, 212, 0)}
+}
+@keyframes outlineAnimation2 {
+    from {outline: 2px solid white}
+    to {outline: 20px solid rgb(255, 255, 255, 0)}
+}
+@keyframes progressAnimation {
+    from {background: radial-gradient(closest-side, white 80%, transparent 20%), linear-gradient(to right, rgba(169, 169, 169, 0.5), rgba(169, 169, 169, 0.5))}
+    to {background: radial-gradient(closest-side, white 80%, transparent 20%), conic-gradient(var(--info-color) 75%, rgba(169, 169, 169, 0.5) 0)}
+}
