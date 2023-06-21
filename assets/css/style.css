@@ -45,6 +45,11 @@ textarea{
     min-height: 150px!important;
 }
 
+.loadSection{
+    transform: translate(0) !important;
+    opacity: 1 !important;
+}
+
 /* ///////////////////////// styles of header ///////////////////////// */
 #headerSection>div:first-of-type{
     width: 100%;
@@ -179,12 +184,19 @@ img[alt=personal-picture]{
     }
 }
 
+/* ///////////////////////// general styles of sections ///////////////////////// */
+#aboutMeSection, #abilitySection, #projectSection, #learnSection, #contactSection{
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
 /* ///////////////////////// my abilities section ///////////////////////// */
 .ability-progress-bar{
     width: 150px;
     height: 150px;
-    transition: 0.6s ease-in-out;
     box-shadow: 0 0 40px 3px rgba(69, 69, 69, 0.39) !important;
+    transition: 0.6s ease-in-out;
 }
 
 .ability-progress-bar span:first-of-type{
@@ -246,23 +258,40 @@ img[alt=personal-picture]{
 
 .line-between{
     width: 120px !important;
-    height: 2px;
+    height: 3px;
     margin-top: 90px !important;
-    border: 2px dashed var(--info-color);
+    border: 0;
+    overflow: hidden;
+}
+
+.line-between div{
+    border: 3px dashed rgb(13, 202, 240);
+    transform: translateX(-120%);
+}
+
+.line-between div[style="order: 2"], .line-between div[style="order: 4"]{
+    transform: translateX(120%);
 }
 
 .line-side{
     justify-content: flex-end;
 }
 
-.line-side hr{
-    width: 2px !important;
+.line-side>div{
+    width: 3px !important;
     height: 120px;
     padding: 0 !important;
-    border: 2px dashed var(--info-color);
+    border: 0;
+    overflow: hidden;
 }
 
-.line-between:nth-of-type(4){
+.line-side>div>div{
+    height: 100%;
+    border: 3px dashed rgb(13, 202, 240);
+    transform: translateY(-120%);
+}
+
+.line-between:nth-of-type(8){
     display: none;
 }
 
@@ -304,10 +333,10 @@ img[alt=personal-picture]{
     .line-side{
         display: none !important;
     }
-    .learnSubject:nth-of-type(6){
+    .learnSubject[style="order: 1"]{
         order: 5 !important;
     }
-    .learnSubject:nth-of-type(8){
+    .learnSubject[style="order: 5"]{
         order: 1 !important;
     }
     .learnSubject span:nth-of-type(1){
@@ -343,7 +372,15 @@ footer div:first-of-type{
     from {outline: 2px solid white}
     to {outline: 20px solid rgb(255, 255, 255, 0)}
 }
-@keyframes progressAnimation {
-    from {background: radial-gradient(closest-side, white 80%, transparent 20%), linear-gradient(to right, rgba(169, 169, 169, 0.5), rgba(169, 169, 169, 0.5))}
-    to {background: radial-gradient(closest-side, white 80%, transparent 20%), conic-gradient(var(--info-color) 75%, rgba(169, 169, 169, 0.5) 0)}
+@keyframes betweenLineAnimationToRight {
+    from {transform: translateX(-120%)}
+    to {transform: translateX(0)}
+}
+@keyframes betweenLineAnimationToLeft {
+    from {transform: translateX(120%)}
+    to {transform: translateX(0)}
+}
+@keyframes betweenLineAnimationToBottom {
+    from {transform: translateY(-120%)}
+    to {transform: translateY(0)}
 }
