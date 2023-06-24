@@ -172,7 +172,7 @@ function sendEmail(){
     alert.appendChild(title);
     alert.appendChild(btnClose);
     document.body.appendChild(alert);
-    setInterval(function (){document.body.removeChild(alert)}, 10000);
+    setInterval(function (){document.body.removeChild(alert)}, 20000);
 }
 
 
@@ -229,6 +229,10 @@ window.onscroll = function (){
         const el = document.getElementById(section);
         if (winScroll >= el.offsetTop - el.clientHeight && sectionsLoaded[section] === false){
             el.className += ' loadSection';
+            try {
+                el.nextElementSibling.className += ' loadSection2';
+            }
+            catch {}
             sectionsLoaded[section] = true;
         }
     }
