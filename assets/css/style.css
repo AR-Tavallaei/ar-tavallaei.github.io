@@ -46,8 +46,21 @@ textarea{
 }
 
 .loadSection{
-    transform: translate(0) !important;
+    transform: translateY(0) !important;
     opacity: 1 !important;
+}
+
+.loadSection2{
+    transform: translateY(-16px) !important;
+    opacity: 1 !important;
+}
+
+.circle{
+    width: 26px;
+    height: 26px;
+    opacity: 0;
+    transform: translateY(184px);
+    transition: 1s ease-in-out;
 }
 
 /* ///////////////////////// styles of header ///////////////////////// */
@@ -73,12 +86,6 @@ textarea{
 
 .navbar-toggler-icon:checked{
     border: 0 !important;
-}
-
-.circle{
-    width: 26px;
-    height: 26px;
-    transform: translateY(-16px);
 }
 
 /* ///////////////////////// bio in header ///////////////////////// */
